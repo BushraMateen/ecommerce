@@ -3,8 +3,8 @@ from .models import *
 
 def store(request):
     products = Product.objects.all()
-	context = {'products':products}
-	return render(request, 'store/store.html',context)
+    context = {'products':products}
+    return render(request, 'store/store.html',context)
 
 def cart(request):
 	context = {}
