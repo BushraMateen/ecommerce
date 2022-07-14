@@ -72,8 +72,8 @@ class OrderItem(models.Model):
         return total
 
 class ShippingAddress(models.Model):
-    product = models.ForeignKey(Customer,on_delete=models.SET_NULL,null=True)
-    order =  models.ForeignKey(Order,on_delete=models.SET_NULL,null=True)
+    customer = models.ForeignKey(Customer,on_delete=models.SET_NULL,blank = True,null=True)
+    order =  models.ForeignKey(Order,on_delete=models.SET_NULL,blank = True,null=True)
     address = models.CharField(max_length=200,null=False)
     city = models.CharField(max_length=200,null=False)
     state = models.CharField(max_length=200,null=False)
